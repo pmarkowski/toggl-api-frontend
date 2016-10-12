@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Toggl API Front End</title>
+    </head>
+
+    <body>
+        <h1>Toggl API Front End</h1>
+        <div>
+            <h2>Authenticate</h2>
+            <div>
+                <label>
+                    Username:
+                    <input type="text" name="username" id="username">
+                </label>
+            </div>
+            <div>
+                <label>
+                    Password:
+                    <input type="password" name="password" id="password">
+                </label>
+            </div>
+            <input type="submit" value="Authenticate" onclick="authenticate();">
+        </div>
+        <div>
+            <h2>Workspace</h2>
+            <div>
+                <label>
+                    Workspace:
+                    <select>
+                    </select>
+                </label>
+            </div>
+            <input type="submit" value="Select Workspace">
+        </div>
+        <div>
+            <h2>Project</h2>
+            <div>
+                <label>
+                    Project:
+                    <select></select>
+                </label>
+            </div>
+            <input type="submit" value="Select Project">
+        </div>
+        <div>
+            <h2>Task</h2>
+            <label>
+                Task:
+                <select></select>
+            </label>
+        </div>
+        <div>
+            <h2>Time Entry</h2>
+            <div>
+                <label>
+                    Description:
+                    <input type="text" name="description" id="description">
+                </label>
+            </div>
+            <div>
+                <label>
+                    Billable:
+                    <select name="billable" id="billable">
+                        <option>False</option>
+                        <option>True</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <label>
+                    Start Time:
+                    <input type="time" name="start-time" id="start-time">
+                </label>
+            </div>
+            <div>
+                <label>
+                    Duration (s):
+                    <input type="number" name="duration" id="duration">
+                </label>
+                <b>OR</b>
+                <label>
+                    Stop Time:
+                    <input type="time" name="end-time" id="end-time">
+                </label>
+                <span>
+                    <b>Note:</b>
+                    Only one of these fields are necessary. If both are populated, duration will be used.
+                </span>
+            </div>
+            <div>
+                <label>
+                    Start Date:
+                    <input type="date" name="start-date" id="start-date">
+                </label>
+            </div>
+            <div>
+                <label>
+                    End Date:
+                    <input type="date" name="end-date" id="end-date">
+                </label>
+                <span>
+                    <b>Note:</b>
+                    When an end date is specified, this tool will iterate through each day from the start and end date and make identical time entries for each day.
+                </span>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="script.js"></script>
+</html>
