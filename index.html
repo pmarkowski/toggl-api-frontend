@@ -1,53 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html style="overflow-y:visible;">
     <head>
         <title>Toggl API Front End</title>
     </head>
 
-    <body>
+    <body style="overflow-y:visible;">
         <h1>Toggl API Front End</h1>
         <div>
             <h2>Authenticate</h2>
-            <div>
-                <label>
-                    Username:
-                    <input type="text" name="username" id="username">
-                </label>
-            </div>
-            <div>
-                <label>
-                    Password:
-                    <input type="password" name="password" id="password">
-                </label>
-            </div>
-            <input type="submit" value="Authenticate" onclick="authenticate();">
+            <form>
+                <div>
+                    <label>
+                        Username:
+                        <input type="text" name="username" id="username">
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        Password:
+                        <input type="password" name="password" id="password">
+                    </label>
+                </div>
+                <input type="submit" id="authenticate" value="Authenticate">
+            </form>
         </div>
         <div>
             <h2>Workspace</h2>
             <div>
                 <label>
                     Workspace:
-                    <select>
+                    <select id="workspace">
                     </select>
                 </label>
             </div>
-            <input type="submit" value="Select Workspace">
         </div>
         <div>
             <h2>Project</h2>
             <div>
                 <label>
                     Project:
-                    <select></select>
+                    <select id="project"></select>
                 </label>
             </div>
-            <input type="submit" value="Select Project">
         </div>
         <div>
             <h2>Task</h2>
             <label>
                 Task:
-                <select></select>
+                <select id="task"></select>
             </label>
         </div>
         <div>
