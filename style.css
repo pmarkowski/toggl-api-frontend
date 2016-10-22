@@ -1,0 +1,10 @@
+html {
+    overflow-y: scroll;
+}
+
+#error span {
+    background-color: #FFABAB;
+    color: #5D0202;
+    padding: 10px;
+    display: inline-block;
+}

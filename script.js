@@ -13,6 +13,15 @@ function initialize() {
 }
 
 // Functions
+function error(message) {
+    var errorDiv = document.getElementById('error');
+
+    var errorSpan = document.createElement('span');
+    errorSpan.innerText = message;
+
+    errorDiv.innerHTML = errorSpan.outerHTML;
+}
+
 function togglGet(user, password, endpoint, success) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', togglApi + endpoint);
@@ -23,6 +32,8 @@ function togglGet(user, password, endpoint, success) {
             if (response) {
                 success(response);
             }
+        } else {
+            error('Error calling Toggl API!');
         }
     }
 
