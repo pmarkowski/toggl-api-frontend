@@ -69,8 +69,8 @@
 				<label>
                     Billable:
                     <select name="billable" id="billable">
-                        <option>False</option>
-                        <option>True</option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
                     </select>
                 </label>
 			</div>
@@ -82,10 +82,10 @@
 			</div>
 			<div>
 				<label>
-                    Duration (s):
+                    Duration (h):
                     <input type="number" name="duration" id="duration">
                 </label>
-				<b>OR</b>
+				<!--<b>OR</b>
 				<label>
                     Stop Time:
                     <input type="time" name="end-time" id="end-time">
@@ -93,7 +93,7 @@
 				<span>
                     <b>Note:</b>
                     Only one of these fields are necessary. If both are populated, duration will be used.
-                </span>
+                </span>-->
 			</div>
 			<div>
 				<label>
@@ -111,6 +111,7 @@
                     When an end date is specified, this tool will iterate through each day from the start and end date and make identical time entries for each day.
                 </span>
 			</div>
+			<input type="submit" value="Submit Time Entries" id="submit-time-entries">
 		</div>
 	</div>
 </body>
