@@ -140,6 +140,10 @@ function dateFromDateAndTimeInputStrings(date, time) {
     return new Date(year, month, date, hours, minutes);
 }
 
+function isWeekend(date) {
+    return date.getDay() == 6 || date.getDay() == 7;
+}
+
 function createTimeEntries() {
     var taskId = parseInt(document.getElementById('task').value);
     var description = document.getElementById('description').value;
@@ -149,6 +153,7 @@ function createTimeEntries() {
     // var endTime = document.getElementById('end-time').value;
     var startDateString = document.getElementById('start-date').value;
     var endDateString = document.getElementById('end-date').value;
+    var skipWeekends = document.getElementById('skip-weekends').value;
 
     var startDate, endDate;
 
@@ -180,8 +185,14 @@ function createTimeEntries() {
         var postDate = new Date(startDate);
         postDate.setDate(startDate.getDate() + i);
 
+        if (skipWeekends && isWeekend(postDate)) {
+            continue;
+        }
+
         postObject.time_entry.start = postDate.toISOString();
 
-        togglJsonPost(user, password, '/time_entries', postObject);
+        togglJsonPost(user, password, '/time_entries', postObject, function () {
+            document.getElementById('success-text').innerText += 'Successfully POSTed for ' + postDate + '\n';
+        });
     }
 }
