@@ -141,7 +141,7 @@ function dateFromDateAndTimeInputStrings(date, time) {
 }
 
 function isWeekend(date) {
-    return date.getDay() == 6 || date.getDay() == 7;
+    return date.getDay() == 6 || date.getDay() == 0;
 }
 
 function createTimeEntries() {
