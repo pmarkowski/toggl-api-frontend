@@ -82,6 +82,22 @@ function addOption(dropdown, value, name) {
     dropdown.appendChild(optionElement);
 }
 
+function emptyDropdown(dropdown) {
+    while (dropdown.lastChild) {
+        dropdown.removeChild(dropdown.firstChild);
+    }
+}
+
+function populateDropdown(dropdown, defaultString, valueNamePairs) {
+    emptyDropdown(dropdown);
+    if (defaultString) {
+        addOption(dropdown, null, defaultString);
+    }
+    valueNamePairs.forEach(function(element) {
+        addOption(dropdown, element.value, element.name);
+    });
+}
+
 function populateWorkspaces(workspaces) {
     var workspacesDropdown = document.getElementById('workspace');
 
