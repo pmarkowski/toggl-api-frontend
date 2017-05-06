@@ -101,11 +101,14 @@ function populateDropdown(dropdown, defaultString, valueNamePairs) {
 function populateWorkspaces(workspaces) {
     var workspacesDropdown = document.getElementById('workspace');
 
-    addOption(workspacesDropdown, null, "Select a workspace...");
+    var workspacesOptions = workspaces.map(function (element) {
+        return {
+            value: element.id,
+            name: element.name
+        };
+    });
 
-    for (var i = 0; i < workspaces.length; i++) {
-        addOption(workspacesDropdown, workspaces[i].id, workspaces[i].name);
-    }
+    populateDropdown(workspacesDropdown, "Select a workspace...", workspacesOptions);
 }
 
 function workspaceChanged() {
@@ -120,11 +123,14 @@ function workspaceChanged() {
 function populateProjects(projects) {
     var projectsDropdown = document.getElementById('project');
 
-    addOption(projectsDropdown, null, 'Select a project...');
+    var projectsOptions = projects.map(function (element) {
+        return {
+            value: element.id,
+            name: element.name
+        };
+    });
 
-    for (var i = 0; i < projects.length; i++) {
-        addOption(projectsDropdown, projects[i].id, projects[i].name);
-    }
+    populateDropdown(projectsDropdown, "Select a project...", projectsOptions);
 }
 
 function projectChanged() {
@@ -138,11 +144,15 @@ function projectChanged() {
 
 function populateTasks(tasks) {
     var tasksDropdown = document.getElementById('task');
-    addOption(tasksDropdown, null, "Select a task...");
 
-    for (var i = 0; i < tasks.length; i++) {
-        addOption(tasksDropdown, tasks[i].id, tasks[i].name);
-    }
+    var tasksOptions = tasks.map(function (element) {
+        return {
+            value: element.id,
+            name: element.name
+        };
+    });
+
+    populateDropdown(tasksDropdown, "Select a task...", tasksOptions);
 }
 
 function dateFromDateAndTimeInputStrings(date, time) {
