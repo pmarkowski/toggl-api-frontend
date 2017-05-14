@@ -145,7 +145,9 @@ function projectChanged() {
 function populateTasks(tasks) {
     var tasksDropdown = document.getElementById('task');
 
-    var tasksOptions = tasks.map(function (element) {
+    var tasksOptions = tasks.filter(function (element) {
+        return element.active;
+    }).map(function (element) {
         return {
             value: element.id,
             name: element.name
