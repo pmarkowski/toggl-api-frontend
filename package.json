@@ -1,0 +1,30 @@
+{
+  "name": "toggl-api-frontend",
+  "version": "1.0.0",
+  "description": "An alternate UI for inserting repeated Toggl time entries",
+  "main": "main.js",
+  "build": {
+    "appId": "toggl.api.frontend",
+    "win": {
+      "icon": "./icon.png"
+    }
+  },
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmarkowski/toggl-api-frontend.git"
+  },
+  "author": "Philip Markowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pmarkowski/toggl-api-frontend/issues"
+  },
+  "homepage": "https://github.com/pmarkowski/toggl-api-frontend#readme",
+  "devDependencies": {
+    "electron": "^1.7.9",
+    "electron-builder": "^20.8.1"
+  }
+}

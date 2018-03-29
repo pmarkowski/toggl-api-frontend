@@ -11,6 +11,9 @@ window.addEventListener('load', initialize);
 // Set up event listeners
 function initialize() {
     document.getElementById('authenticate').addEventListener('click', authenticate);
+    document.querySelectorAll('#authenticate-container input').forEach(element => {
+        element.addEventListener('click', authenticate);
+    });
     document.getElementById('workspace').addEventListener('change', workspaceChanged);
     document.getElementById('project').addEventListener('change', projectChanged);
     document.getElementById('submit-time-entries').addEventListener('click', createTimeEntries);
